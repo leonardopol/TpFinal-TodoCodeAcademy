@@ -1,0 +1,654 @@
+{
+	"info": {
+		"_postman_id": "2f7a6b8e-18da-40c6-bf0a-3d3f79b08be0",
+		"name": "TpFinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Crear Productos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"nombre\":\"Jarra Loca\",\r\n    \"marca\":\"Fernet\",\r\n    \"costo\":\"1024.00\",\r\n    \"cantidad_disponible\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/productos/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista completa de productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer un producto en particular",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/eliminar/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"eliminar",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar producto parametros",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/editar/7?id_nueva=7&nombre=Jarra Loca&cantidad_disponible=5&costo=1024&marca=Fernet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"editar",
+								"7"
+							],
+							"query": [
+								{
+									"key": "id_nueva",
+									"value": "7"
+								},
+								{
+									"key": "nombre",
+									"value": "Jarra Loca"
+								},
+								{
+									"key": "cantidad_disponible",
+									"value": "5"
+								},
+								{
+									"key": "costo",
+									"value": "1024"
+								},
+								{
+									"key": "marca",
+									"value": "Fernet"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Productos objeto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo_producto\":5,\r\n    \"nombre\":\"Copa de Vidrio\",\r\n    \"cantidad_disponible\":5,\r\n    \"costo\":580.99,\r\n    \"marca\":\"Chandon\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/productos/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cantidad disponible menor a 5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/falta_stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"falta_stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer Costo de un producto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/costo_producto/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"costo_producto",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verificar Faltante de un producto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/productos/faltante/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								"faltante",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Crear clientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"nombre\":\"Charles\",\r\n    \"apellido\":\"Leclerc\",\r\n    \"dni\":\"22.444355\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista completa de clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer un cliente en particular",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/eliminar/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"eliminar",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/editar/11?id_nueva=11&nombre=Checo&apellido=Perez&dni=26.6432779",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"editar",
+								"11"
+							],
+							"query": [
+								{
+									"key": "id_nueva",
+									"value": "11"
+								},
+								{
+									"key": "nombre",
+									"value": "Checo"
+								},
+								{
+									"key": "apellido",
+									"value": "Perez"
+								},
+								{
+									"key": "dni",
+									"value": "26.6432779"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar cliente objeto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_cliente\":10,\r\n    \"nombre\":\"Fernando\",\r\n    \"apellido\":\"Alonso\",\r\n    \"dni\":\"25.5555555\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ventas",
+			"item": [
+				{
+					"name": "Crear Venta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"fecha_venta\":\"2022-05-09\",\r\n    \"total\":\"1886.22\",\r\n    \"unCliente\":{\"id_cliente\":12},\r\n    \"lista_productos\":[{\r\n        \"codigo_producto\":1},\r\n        {\"codigo_producto\":2}\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ventas/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ventas",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Venta Verifica y  Descuenta Stock Automatico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"fecha_venta\":\"2022-06-24\",\r\n    \"unCliente\":{\"id_cliente\":2},\r\n    \"lista_productos\":[{\r\n        \"codigo_producto\":4},\r\n        {\"codigo_producto\":5},\r\n        {\"codigo_producto\":7}\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ventas/crear/calculo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ventas",
+								"crear",
+								"calculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Venta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ventas/eliminar/39",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ventas",
+								"eliminar",
+								"39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista completa de ventas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ventas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ventas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer una venta en particular",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ventas/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ventas",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Venta Objeto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo_venta\":15,\r\n    \"fecha_venta\":\"2022-05-06\",\r\n    \"total\":1800.00,\r\n    \"unCliente\":{\"id_cliente\":6},\r\n    \"lista_productos\":[{\r\n        \"codigo_producto\":2},\r\n        {\"codigo_producto\":3}\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ventas/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ventas",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Venta Parametros",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/editar/15?codigo_venta=15&fecha_venta=2022-05-02&total=1900",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"editar",
+								"15"
+							],
+							"query": [
+								{
+									"key": "codigo_venta",
+									"value": "15"
+								},
+								{
+									"key": "fecha_venta",
+									"value": "2022-05-02"
+								},
+								{
+									"key": "total",
+									"value": "1900"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista productos por venta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ventas/productos/19",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ventas",
+								"productos",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener sumatoria y cantidad ventas x fecha",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ventas/total/2022-06-19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ventas",
+								"total",
+								"2022-06-19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mayor Venta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ventas/mayor_venta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ventas",
+								"mayor_venta"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
