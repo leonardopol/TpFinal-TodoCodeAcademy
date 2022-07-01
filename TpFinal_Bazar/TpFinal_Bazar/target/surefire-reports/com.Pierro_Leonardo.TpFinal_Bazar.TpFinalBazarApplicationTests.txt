@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.Pierro_Leonardo.TpFinal_Bazar.TpFinalBazarApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 42.564 s - in com.Pierro_Leonardo.TpFinal_Bazar.TpFinalBazarApplicationTests
